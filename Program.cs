@@ -88,12 +88,9 @@ namespace UIDGenerator
 
         private static int GetUnique(int a, int b)
         {
-            int result = (a + b)*(a + b + 1);
-            result = (int)Decimal.Multiply(result, 0.5m);
-            result += b;
+            int result = ((a - b)*(a + b + 1) + b)/2;
             if (result < 0)
                 result *= -1;
-
             return result;
         }
 
